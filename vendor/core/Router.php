@@ -1,4 +1,7 @@
 <?php
+
+namespace vendor\core;
+
 /**
  *
  */
@@ -8,7 +11,7 @@ class Router
   // @var array
   protected static $routes = [];
 
-  // Текущий маршрутов
+  // Текущий маршрут
   // @var array
   protected static $route = [];
 
@@ -58,7 +61,7 @@ class Router
   // @return void
   public static function dispatch($url){
     if( self::matchRoute($url) ){
-      $controller = self::upperCamelCase(self::$route['controller']);
+      $controller = 'app\controllers\\' . self::upperCamelCase(self::$route['controller']);
       if(class_exists($controller)){
         $cObj = new $controller;
         $action = self::lowerCamelCase(self::$route['action']) . 'Action';
