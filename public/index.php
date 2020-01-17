@@ -13,7 +13,7 @@ define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 define('CORE', dirname(__DIR__) . '/vendor/core');
-
+define('LAYOUT', 'default');
 
 // require '../vendor/core/Router.php';
 require '../vendor/libs/functions.php';

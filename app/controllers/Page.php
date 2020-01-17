@@ -3,12 +3,12 @@ namespace app\controllers;
 /**
  *
  */
-class Page extends \vendor\core\base\Controller
+class Page extends App
 {
 
   public function viewAction(){
     // debug($this->route);
-    debug($_GET);
+    // debug($_GET);
     // echo 'Page::view';
   }
 }

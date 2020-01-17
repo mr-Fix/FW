@@ -4,10 +4,15 @@ namespace app\controllers;
 /**
  *
  */
-class Main
+class Main extends App
 {
+  public $layout = 'main';
+
   public function indexAction(){
-    echo 'Main::index';
+    // echo 'Main::index';
+    $name = 'Андрей';
+    $col = ['name' => $name, 'hi' => 'hello'];
+    $this->set(compact('name'));
   }
 
 }
