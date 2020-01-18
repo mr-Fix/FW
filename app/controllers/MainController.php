@@ -10,9 +10,8 @@ class MainController extends AppController
 
   public function indexAction(){
     $model = new Main;
-    $posts = $model->findAll();
-    // debug($posts);
-    // $name = 'Андрей';
+    $posts = \R::findAll('posts');
+    debug($data);
     $this->set(compact('posts'));
   }
 
