@@ -33,6 +33,7 @@ abstract class Controller
     $this->route = $route;
     $this->view = $route['action'];
   }
+  
   public function getView(){
     $vObj = new View($this->route, $this->layout, $this->view);
     $vObj->render($this->vars);

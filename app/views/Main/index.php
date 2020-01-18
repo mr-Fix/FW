@@ -1,2 +1,7 @@
 <h1>Индекс - Main</h1>
-<?php echo $name; ?>
+
+<div class="container">
+  <?php foreach($posts as $post): ?>
+
+  <?php endforeach; ?>
+</div>
