@@ -12,7 +12,11 @@ class MainController extends AppController
   public function indexAction(){
     // App::$app->getList();
     $model = new Main;
-    $posts = \R::findAll('posts');
+    $posts = App::$app->cashe->get('posts');
+    if(!$posts){
+      $posts = \R::findAll('posts');
+      App::$app->cashe->set('posts', $posts);
+    }
     // debug($data);
     $this->set(compact('posts'));
   }
