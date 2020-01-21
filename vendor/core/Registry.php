@@ -10,7 +10,7 @@ class Registry
 
   protected static $instance;
 
-  function __construct()
+  protected function __construct()
   {
     require_once ROOT . '/config/config.php';
     foreach($config['components'] as $name => $component){
