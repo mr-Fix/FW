@@ -7,9 +7,8 @@ namespace vendor\core;
 class Db
 {
   use TSingletone;
-  protected $pdo;
 
-  // protected static $instance;
+  protected $pdo;
 
   public static $countSql = 0;
 
@@ -33,13 +32,6 @@ class Db
     //             \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,];
     // $this->pdo = new \PDO($db['dsn'], $db['user'], $db['pass'], $options);
   }
-
-  // public static function instance(){
-  //   if(self::$instance === null){
-  //     self::$instance = new self;
-  //   }
-  //   return self::$instance;
-  // }
 
   // public function execute($sql, $params = []){
   //   self::$countSql++;
