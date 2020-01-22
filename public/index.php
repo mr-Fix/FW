@@ -2,11 +2,11 @@
 error_reporting(-1);
 use vendor\core\Router;
 
- // echo $query = $_SERVER['REQUEST_URI'];
- // echo $query = ltrim($_SERVER['REQUEST_URI'], '/');
-// $query = rtrim($query, '/');
+ $query = $_SERVER['REQUEST_URI'];
+$query = ltrim($_SERVER['REQUEST_URI'], '/');
+echo $query = rtrim($query, '/');
 echo '<br>';
-$query = $_SERVER['QUERY_STRING'];
+// echo $query = $_SERVER['QUERY_STRING'];
 echo '<br>';
 
 define('WWW', __DIR__);
@@ -31,7 +31,6 @@ new \vendor\core\App;
 
 Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
 Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
-
 
 // default routes
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);

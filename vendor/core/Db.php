@@ -6,10 +6,15 @@ namespace vendor\core;
  */
 class Db
 {
+  use TSingletone;
   protected $pdo;
-  protected static $instance;
+
+  // protected static $instance;
+
   public static $countSql = 0;
+
   public static $queries = [];
+
   protected function __construct()
   {
     $db = require ROOT . '/config/config_db.php';
@@ -18,7 +23,7 @@ class Db
 
     //запрещаю отладку структуры таблицы на лету
     \R::freeze();
-    
+
     // \R::fancyDebug(TRUE);
 
     /*
@@ -29,12 +34,12 @@ class Db
     // $this->pdo = new \PDO($db['dsn'], $db['user'], $db['pass'], $options);
   }
 
-  public static function instance(){
-    if(self::$instance === null){
-      self::$instance = new self;
-    }
-    return self::$instance;
-  }
+  // public static function instance(){
+  //   if(self::$instance === null){
+  //     self::$instance = new self;
+  //   }
+  //   return self::$instance;
+  // }
 
   // public function execute($sql, $params = []){
   //   self::$countSql++;

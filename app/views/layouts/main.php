@@ -11,7 +11,7 @@
     <title>Main</title>
   </head>
   <body>
-    <h1>Main</h1>
+    <h1>Шаблон Main</h1>
     <?php echo $content; ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

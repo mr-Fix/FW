@@ -2,23 +2,28 @@
 namespace app\controllers;
 use app\models\Main;
 use vendor\core\App;
+use vendor\core\base\View;
 /**
  *
  */
 class MainController extends AppController
 {
-  // public $layout = 'main';
+  //public $layout = 'main';
 
   public function indexAction(){
-    // App::$app->getList();
+
     $model = new Main;
-    $posts = App::$app->cashe->get('posts');
-    if(!$posts){
-      $posts = \R::findAll('posts');
-      App::$app->cashe->set('posts', $posts);
-    }
-    // debug($data);
+    $posts = \R::findAll('posts');
+    View::setMeta('Главная страница', 'Описание страницы', 'Ключевык слова');
     $this->set(compact('posts'));
+  }
+  public function testAction(){
+    if( $this->isAjax() ){
+      $model = new Main();
+      $post = \R::findOne('posts', "id = {$_POST['id']}");
+      $this->loadView('test', compact('post'));
+      die;
+    }
   }
 
 }
