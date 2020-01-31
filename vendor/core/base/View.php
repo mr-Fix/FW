@@ -2,7 +2,8 @@
 namespace vendor\core\base;
 
 /**
- *
+ * Базовый view/ Подключает и отдает шаблоны и view. Также передает параметры внутрь view
+ * Сожержит методы переноса скриптов js вниз шаблона из view
  */
 class View
 {
@@ -14,7 +15,7 @@ class View
    public $route = [];
 
   /**
-  * текущий вид
+  * текущий view
   * @var string
   */
   public $view;
@@ -26,11 +27,15 @@ class View
    public $layout;
 
   /**
-  * все скрипты из view
+  * все скрипты из view (результат работы метода getScripts)
   * @var array
   */
    public $scripts = [];
 
+   /**
+   * Статическое свойство для проброса метаинформации о страницы в view
+   * @var array
+   */
    public static $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
 
 
@@ -45,6 +50,12 @@ class View
     $this->view = $view;
   }
 
+  /**
+  * Подключает шаблон, view. Передает в view даные. Перердает view в шаблон.
+  *
+  * @var array $vars - массив с переменными
+  * @return void
+  */
   public function render($vars){
     if( is_array($vars) ){
       extract($vars);
@@ -75,6 +86,12 @@ class View
     }
   }
 
+  /**
+  * Ищет js код в view и вырезает его.
+  *
+  * @param string $content - весь текст из view
+  * @return string $content - весь текст view без скриптов js
+  */
   protected function getScripts($content){
     $pattern = "#<script.*?>.*?</script>#si";
     preg_match_all($pattern, $content, $this->scripts);
@@ -84,12 +101,24 @@ class View
     return $content;
   }
 
+  /**
+  * Выводит метаданные на страницу (title, keywords, description)
+  *
+  * @return void
+  */
   public static function getMeta(){
     echo '<title>' . self::$meta['title'] . '</title>
     <meta name="description" content="' . self::$meta['desc'] . '">
     <meta name="keywords" content="' . self::$meta['keywords'] . '">';
   }
-
+  /**
+  * Записывает метаданные в статическое свойство self::$meta (title, keywords, description)
+  *
+  * @param string $title - Заголовок страницы
+  * @param string $desc - Описание
+  * @param string $keywords - Ключевые слова для страницы
+  * @return void
+  */
   public static function setMeta($title = '', $desc = '', $keywords = ''){
     self::$meta['title'] = $title;
     self::$meta['desc'] = $desc;
