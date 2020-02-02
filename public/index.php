@@ -16,7 +16,7 @@ define('APP', dirname(__DIR__) . '/app');
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('LAYOUT', 'default');
 define('LIBS', dirname(__DIR__) . '/vendor/libs');
-define('CASHE', dirname(__DIR__) . '/tmp/cashe');
+define('CACHE', dirname(__DIR__) . '/tmp/cache');
 
 
 require '../vendor/libs/functions.php';

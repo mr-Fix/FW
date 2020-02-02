@@ -4,7 +4,7 @@ namespace vendor\libs;
 /**
  * Класс кеширования данных
  */
-class Cashe
+class Cache
 {
 
 /**
@@ -19,7 +19,7 @@ class Cashe
     $content = null;
     $content['data'] = $data;
     $content['end_time'] = time() + $seconds;
-    if ( file_put_contents(CASHE . '/' . md5($key) . '.txt', serialize($content)) ){
+    if ( file_put_contents(CACHE . '/' . md5($key) . '.txt', serialize($content)) ){
       return true;
     }
     return false;
@@ -32,7 +32,7 @@ class Cashe
   * @return bool|string
   */
   public function get($key){
-    $file = CASHE . '/' . md5($key) . '.txt';
+    $file = CACHE . '/' . md5($key) . '.txt';
     if( file_exists($file) ){
       $content = unserialize( file_get_contents($file) );
       if(time() <= $content['end_time']){
@@ -51,7 +51,7 @@ class Cashe
   * @return void
   */
   public function delete($key){
-    $file = CASHE . '/' . md5($key) . '.txt';
+    $file = CACHE . '/' . md5($key) . '.txt';
     if( file_exists($file) ){
         unlink($file); //удаляет файл
       }
