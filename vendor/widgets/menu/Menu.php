@@ -3,6 +3,7 @@
 namespace vendor\widgets\menu;
 
 use vendor\libs\Cache;
+use \vendor\core\App;
 /**
  * Класс виджета меню
  */
@@ -96,13 +97,12 @@ class Menu
   * @return void
   */
   protected function run(){
-    $cache = new Cache();
-    $this->menuHtml = $cache->get($this->cacheKey);
+    $this->menuHtml = App::$app->cache->get($this->cacheKey);
     if($this->menuHtml === false){
       $this->data = \R::getAssoc("SELECT * FROM {$this->table}");
       $this->tree = $this->getTree();
       $this->menuHtml = $this->getMenuHtml($this->tree);
-      $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
+      App::$app->cache->set($this->cacheKey, $this->menuHtml, $this->cache);
     }
     $this->output();
   }

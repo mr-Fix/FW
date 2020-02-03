@@ -61,6 +61,12 @@ class Router
         if( !isset($route['action']) ){
           $route['action'] = 'index';
         }
+        // получаем префикс для админских контроллеров
+        if( !isset($route['prefix']) ){
+          $route['prefix'] = '';
+        }else{
+          $route['prefix'] .= '\\';
+        }
         $route['controller'] = self::upperCamelCase($route['controller']);
         self::$route = $route;
         // debug($route);
@@ -78,7 +84,7 @@ class Router
   public static function dispatch($url){
     $url = self::removeQueryString($url);
     if( self::matchRoute($url) ){
-      $controller = 'app\controllers\\' . self::$route['controller'] . 'Controller';
+      $controller = 'app\controllers\\'. self::$route['prefix'] . self::$route['controller'] . 'Controller';
       if(class_exists($controller)){
         $cObj = new $controller(self::$route);
         $action = self::lowerCamelCase(self::$route['action']) . 'Action';

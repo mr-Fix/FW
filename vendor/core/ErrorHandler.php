@@ -83,7 +83,7 @@ class ErrorHandler
   */
   protected function displayError($errno, $errstr, $errfile, $errline, $responce = 500){
     http_response_code($responce);
-    if($responce == 404){
+    if($responce == 404 && !DEBUG){
       require WWW . '/errors/views/404.html';
       die;
     }
