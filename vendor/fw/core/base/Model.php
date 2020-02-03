@@ -2,7 +2,7 @@
 
 namespace fw\core\base;
 use fw\core\Db;
-
+use Valitron\Validator;
 /**
  * Базовый класс модели
  */
@@ -26,6 +26,25 @@ abstract class Model
   */
   protected $pk = 'id';
 
+  /**
+  * массив с данными полей формы поля которой мы можем определять в потомке
+  * @var array
+  */
+  public $attributes = [];
+
+  /**
+  * Свойство для записи ошибок валидации
+  * @var array
+  */
+  public $errors = [];
+
+  /**
+  * Правила для валидации форм
+  * @var array
+  */
+  public $rules = [];
+
+
   public function __construct()
   {
     $this->pdo = Db::instance();
@@ -37,6 +56,34 @@ abstract class Model
   */
   public function query($sql){
     return $this->pdo->execute($sql);
+  }
+
+  /**
+  * Метод для записи только тех полей(с формы) которые у нас определены
+  * @param array $data - массив с данными
+  * @return void
+  */
+  public function load($data){
+    foreach($this->attributes as $name => $value){
+      if( isset($data[$name]) ){
+        $this->attributes[$name] = $data[$name];
+      }
+    }
+  }
+
+  /**
+  * Метод для валидации данных из форм
+  * @param array $data - массив с данными
+  * @return bool
+  */
+  public function validate($data){
+    $v = new Validator($data);
+    $v->rules($this->rules);
+    if( $v->validate() ){
+      return true;
+    }
+    $this->errors = $v->errors();
+    return false;
   }
 
   /**

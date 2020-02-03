@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/main.css">
     <!-- <link rel="stylesheet" href="../public/css/main.css"> -->
 
     <?php \fw\core\base\View::getMeta(); ?>
   </head>
   <body>
     <div class="container">
-      <ul class="nav nav-pills">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/page/about">About</a></li>
-        <li><a href="/admin">ADMIN</a></li>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="/page/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin">ADMIN</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/signup">Signup</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
+
       </ul>
     </div>
     <h1>Hello, world! im default</h1>

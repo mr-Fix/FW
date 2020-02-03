@@ -14,6 +14,13 @@
   </head>
   <body>
     <h1>Hello, world! im AAAADMIN default</h1>
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/page/about">About</a></li>
+        <li><a href="/admin">ADMIN</a></li>
+      </ul>
+    </div>
     <?php echo $content; ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
