@@ -1,6 +1,6 @@
 <h1>Вид Main - index</h1>
 
-<?php new \vendor\widgets\menu\Menu([
+<?php new fw\widgets\menu\Menu([
   // 'tpl' => WWW . '/menu/my_menu.php',
   'tpl' => WWW . '/menu/select.php',
   'container' => 'select',

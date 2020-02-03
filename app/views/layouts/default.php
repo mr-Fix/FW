@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="./public/css/main.css">
     <!-- <link rel="stylesheet" href="../public/css/main.css"> -->
 
-    <?php \vendor\core\base\View::getMeta(); ?>
+    <?php \fw\core\base\View::getMeta(); ?>
   </head>
   <body>
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/page/about">About</a></li>
+        <li><a href="/admin">ADMIN</a></li>
+      </ul>
+    </div>
     <h1>Hello, world! im default</h1>
     <?php echo $content; ?>
     <!-- Optional JavaScript -->

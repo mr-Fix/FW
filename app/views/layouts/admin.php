@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./public/css/main.css">
     <!-- <link rel="stylesheet" href="../public/css/main.css"> -->
 
-    <?php \vendor\core\base\View::getMeta(); ?>
+    <?php \fw\core\base\View::getMeta(); ?>
   </head>
   <body>
     <h1>Hello, world! im AAAADMIN default</h1>

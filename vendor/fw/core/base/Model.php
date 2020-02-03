@@ -1,7 +1,7 @@
 <?php
 
-namespace vendor\core\base;
-use vendor\core\Db;
+namespace fw\core\base;
+use fw\core\Db;
 
 /**
  * Базовый класс модели

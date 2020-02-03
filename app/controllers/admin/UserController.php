@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers\admin;
-use vendor\core\base\View;
+use fw\core\base\View;
 /**
  *
  */

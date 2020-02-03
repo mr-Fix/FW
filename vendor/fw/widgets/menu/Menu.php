@@ -1,9 +1,8 @@
 <?php
 
-namespace vendor\widgets\menu;
+namespace fw\widgets\menu;
 
-use vendor\libs\Cache;
-use \vendor\core\App;
+use fw\core\App;
 /**
  * Класс виджета меню
  */

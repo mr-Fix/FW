@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers\admin;
-use vendor\core\base\Controller;
+use fw\core\base\Controller;
 
 /**
  *

@@ -1,5 +1,5 @@
 <?php
-namespace vendor\core\base;
+namespace fw\core\base;
 
 /**
  * Базовый view/ Подключает и отдает шаблоны и view. Также передает параметры внутрь view
