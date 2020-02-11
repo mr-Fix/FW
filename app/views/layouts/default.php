@@ -23,7 +23,7 @@
         <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
 
       </ul>
-    </div>
+
     <?php if( isset($_SESSION['error']) ): ?>
       <div class="alert alert-danger">
         <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
@@ -35,8 +35,13 @@
         <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
       </div>
     <?php endif; ?>
+    <?php debug($_SESSION); ?>
     <?php echo $content; ?>
     <h1>Hello, world! im default</h1>
+
+    </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script> -->

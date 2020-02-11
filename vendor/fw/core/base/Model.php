@@ -89,6 +89,7 @@ abstract class Model
 
   /**
   * Записывает ошибки в массив $_SESSION['error']
+  * @return void
   */
   public function getErrors(){
     $errors = '<ul>';
@@ -101,6 +102,11 @@ abstract class Model
     $_SESSION['error'] = $errors;
   }
 
+  /**
+  * Записывает данные в массив $table
+  * @param string $table - имя таблицы для записи
+  * @return void
+  */
   public function save($table){
     $tbl = \R::dispense($table);
     foreach($this->attributes as $name => $value){

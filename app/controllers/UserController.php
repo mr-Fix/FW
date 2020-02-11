@@ -10,6 +10,10 @@ use app\models\User;
 class UserController extends AppController
 {
 
+  /**
+  * Метод регистрации учетной записи
+  * @return void
+  */
   public function signupAction(){
     if( !empty($_POST) ){
       $user = new User();
@@ -35,12 +39,32 @@ class UserController extends AppController
     View::setMeta('Регистрация');
   }
 
+  /**
+  * Метод входа в учетную запись
+  * @return void
+  */
   public function loginAction(){
-
+    if( !empty($_POST) ){
+      $user = new User();
+      if( $user->login() ){
+        $_SESSION['success'] = 'Вы успешно авторизованы';
+      }else{
+        $_SESSION['error'] = 'Логин/пароль введены неверно!';
+      }
+      redirect();
+    }
+    View::setMeta('Вход');
   }
 
+ /**
+ * Метод выхода из учетной записи
+ * @return void
+ */
   public function logoutAction(){
-
+    if( isset($_SESSION['user']) ){
+      unset($_SESSION['user']);
+      redirect();
+    }
   }
 
 }

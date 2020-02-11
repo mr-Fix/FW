@@ -17,6 +17,7 @@ class MainController extends AppController
     View::setMeta('Главная страница', 'Описание страницы', 'Ключевык слова');
     $this->set(compact('posts'));
   }
+  
   public function testAction(){
     if( $this->isAjax() ){
       $model = new Main();
