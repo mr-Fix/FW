@@ -4,10 +4,10 @@ use fw\core\Router;
 
  $query = $_SERVER['REQUEST_URI'];
 $query = ltrim($_SERVER['REQUEST_URI'], '/');
-echo $query = rtrim($query, '/');
-echo '<br>';
+$query = rtrim($query, '/');
+// echo '<br>';
 // echo $query = $_SERVER['QUERY_STRING'];
-echo '<br>';
+// echo '<br>';
 
 define('DEBUG', 1);
 define('WWW', __DIR__);

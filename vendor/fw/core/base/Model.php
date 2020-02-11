@@ -77,6 +77,7 @@ abstract class Model
   * @return bool
   */
   public function validate($data){
+    Validator::lang('ru');
     $v = new Validator($data);
     $v->rules($this->rules);
     if( $v->validate() ){
@@ -86,6 +87,27 @@ abstract class Model
     return false;
   }
 
+  /**
+  * Записывает ошибки в массив $_SESSION['error']
+  */
+  public function getErrors(){
+    $errors = '<ul>';
+    foreach ($this->errors as $error) {
+      foreach ($error as $item) {
+        $errors .= "<li>$item</li>";
+      }
+    }
+    $errors .= '</ul>';
+    $_SESSION['error'] = $errors;
+  }
+
+  public function save($table){
+    $tbl = \R::dispense($table);
+    foreach($this->attributes as $name => $value){
+      $tbl->$name = $value;
+    }
+    return \R::store($tbl);
+  }
   /**
   * Выборка всех записей из таблицы указанной в $this->table
   * @return object PDOStatement
