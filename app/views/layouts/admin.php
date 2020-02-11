@@ -6,41 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="./public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/main.css">
     <!-- <link rel="stylesheet" href="../public/css/main.css"> -->
 
     <?php \fw\core\base\View::getMeta(); ?>
   </head>
   <body>
+    <h1>Hello, world! im AAAADMIN default</h1>
     <div class="container">
-      <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="/page/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/admin">ADMIN</a></li>
-        <li class="nav-item"><a class="nav-link" href="/user/signup">Signup</a></li>
-        <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
-
+      <ul class="nav nav-pills">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/page/about">About</a></li>
+        <li><a href="/admin">ADMIN</a></li>
       </ul>
-      <h1>Шаблон - default</h1>
-
-    <?php if( isset($_SESSION['error']) ): ?>
-      <div class="alert alert-danger">
-        <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
-      </div>
-    <?php endif; ?>
-
-    <?php if( isset($_SESSION['success']) ): ?>
-      <div class="alert alert-success">
-        <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
-      </div>
-    <?php endif; ?>
-    <?php echo $content; ?>
-
     </div>
-
-
+    <?php echo $content; ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script> -->

@@ -1,0 +1,32 @@
+[2020-01-24 21:18:22] Текст ошибки: Undefined variable: test | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 60
+---------------------
+[2020-01-24 21:21:45] Текст ошибки: Uncaught TypeError: Argument 1 passed to ErrorHandler::exceptionHandler() must be an instance of Exception, instance of Error given in C:\OSPanel\domains\fw.loc\public\test\error\index.php:44
+Stack trace:
+#0 [internal function]: ErrorHandler->exceptionHandler(Object(Error))
+#1 {main}
+  thrown | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 44
+---------------------------------------------------------
+[2020-01-24 21:24:11] Текст ошибки: Uncaught TypeError: Argument 1 passed to ErrorHandler::exceptionHandler() must be an instance of Exception, instance of Error given in C:\OSPanel\domains\fw.loc\public\test\error\index.php:44
+Stack trace:
+#0 [internal function]: ErrorHandler->exceptionHandler(Object(Error))
+#1 {main}
+  thrown | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 44
+---------------------------------------------------------
+[2020-01-24 21:24:58] Текст ошибки: Undefined variable: test | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 62
+---------------------------------------------------------
+[2020-01-24 21:25:12] Текст ошибки: Упс, ошибочка! | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 64
+---------------------------------------------------------
+[2020-01-24 21:28:06] Текст ошибки: Uncaught TypeError: Argument 1 passed to ErrorHandler::exceptionHandler() must be an instance of Exception, instance of Error given in C:\OSPanel\domains\fw.loc\public\test\error\index.php:44
+Stack trace:
+#0 [internal function]: ErrorHandler->exceptionHandler(Object(Error))
+#1 {main}
+  thrown | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 44
+---------------------------------------------------------
+[2020-01-24 21:30:44] Текст ошибки: Call to undefined function test() | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 63
+---------------------------------------------------------
+[2020-01-31 22:16:05] Текст ошибки: Call to undefined function test() | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 63
+---------------------------------------------------------
+[2020-01-31 22:16:05] Текст ошибки: require(views/dev.php): failed to open stream: No such file or directory | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 52
+---------------------------------------------------------
+[2020-01-31 22:16:05] Текст ошибки: require(): Failed opening required 'views/dev.php' (include_path='.') | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 52
+---------------------------------------------------------

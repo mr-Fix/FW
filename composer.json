@@ -1,0 +1,13 @@
+{
+    "name": "fw/fw",
+    "require": {
+        "vlucas/valitron": "^1.4"
+    },
+    "autoload": {
+      "psr-4": {
+        "fw\\": "vendor/fw",
+        "app\\": "app"
+      }
+    }
+
+}

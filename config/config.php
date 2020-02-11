@@ -2,10 +2,9 @@
 
 $config = [
   'components' => [
-    'cashe' => 'vendor\libs\Cashe',
-    'test' => 'vendor\libs\Test',
+    'cache' => 'fw\libs\Cache',
   ],
-  
+
 ];
 
 return $config;
