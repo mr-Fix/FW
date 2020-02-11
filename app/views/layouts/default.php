@@ -23,6 +23,7 @@
         <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
 
       </ul>
+      <h1>Шаблон - default</h1>
 
     <?php if( isset($_SESSION['error']) ): ?>
       <div class="alert alert-danger">
@@ -35,9 +36,7 @@
         <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
       </div>
     <?php endif; ?>
-    <?php debug($_SESSION); ?>
     <?php echo $content; ?>
-    <h1>Hello, world! im default</h1>
 
     </div>
 

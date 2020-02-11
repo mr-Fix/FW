@@ -91,9 +91,12 @@ class View
     // используется встроенная функция php ob_gzhandler
     // но возможно использовать метод compressPage [$this, 'compressPage'] тогда нужно убрать отправку заголовка Content-Encoding
     // ob_start([$this, 'compressPage']);
-    
-    ob_start('ob_gzhandler');
+    if(DEBUG){
+      ob_start();
+    }else{
       header("Content-Encoding: gzip");
+      ob_start('ob_gzhandler');
+    }
       if(is_file($file_view)){
         require $file_view;
       }else{
