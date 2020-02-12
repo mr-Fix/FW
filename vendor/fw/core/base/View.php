@@ -158,4 +158,18 @@ class View
     self::$meta['desc'] = $desc;
     self::$meta['keywords'] = $keywords;
   }
+
+  /**
+  * Метод для поключения файла в шаблоне в папке viewa
+  * @param string
+  * @return int|bool
+  */
+  public function getPart($file){
+    $file = APP . "/views/{$file}.php";
+    if(is_file($file)){
+      require_once $file;
+    }else{
+      throw new \Exception("<p>Не найден файл <b>{$file}</b></p>", 404);
+    }
+  }
 }

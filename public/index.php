@@ -14,7 +14,7 @@ define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 define('CORE', dirname(__DIR__) . '/vendor/fw/core');
-define('LAYOUT', 'default');
+define('LAYOUT', 'blog');
 define('LIBS', dirname(__DIR__) . '/vendor/fw/libs');
 define('CACHE', dirname(__DIR__) . '/tmp/cache');
 

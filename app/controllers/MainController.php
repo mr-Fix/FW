@@ -9,20 +9,19 @@ use fw\libs\Pagination;
  */
 class MainController extends AppController
 {
-  //public $layout = 'main';
+  // public $layout = 'main';
 
   public function indexAction(){
 
     $model = new Main;
     $total = \R::count('posts');
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-    $perpage = 1;
+    $perpage = 2;
     $pagination = new Pagination($page, $perpage, $total);
     $start = $pagination->getStart();
     $posts = \R::findAll('posts', "LIMIT $start, $perpage");
-    // $menu = $this->menu;
-    View::setMeta('Главная страница', 'Описание страницы', 'Ключевык слова');
-    $this->set(compact('posts', 'menu', 'pagination', 'total'));
+    View::setMeta('Blog : : Главная страница', 'Описание страницы', 'Ключевык слова');
+    $this->set(compact('posts', 'pagination', 'total'));
   }
 
   public function testAction(){
