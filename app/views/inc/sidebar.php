@@ -11,7 +11,7 @@
 ]);
 */
 ?>
-
+<?php new \fw\widgets\language\Language(); ?>
 <div class="recent">
   <h3>RECENT POSTS</h3>
   <ul>

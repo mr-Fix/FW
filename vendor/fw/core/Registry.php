@@ -91,9 +91,9 @@ class Registry
   * @return void
   */
   public function getProperties(){
-    echo '<pre>';
-    var_dump(self::$properties);
-    echo '</pre>';
+    // echo '<pre>';
+    debug(self::$properties);
+    // echo '</pre>';
   }
 
 }
