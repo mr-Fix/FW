@@ -1,6 +1,7 @@
 <?php
 namespace fw\core\base;
 
+use fw\core\App;
 /**
  * Базовый view/ Подключает и отдает шаблоны и view. Также передает параметры внутрь view
  * Сожержит методы переноса скриптов js вниз шаблона из view
@@ -83,6 +84,8 @@ class View
   * @return void
   */
   public function render($vars){
+    Lang::load(App::$app->getProperty('lang'), $this->route);
+
     if( is_array($vars) ){
       extract($vars);
     }

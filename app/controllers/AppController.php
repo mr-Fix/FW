@@ -15,7 +15,7 @@ class AppController extends \fw\core\base\Controller
    new \app\models\Main();
      App::$app->setProperty('langs', Language::getLanguages());
      App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')) );
-     App::$app->getProperties();
+     // App::$app->getProperties();
 
  }
 

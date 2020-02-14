@@ -14,12 +14,13 @@ class MainController extends AppController
   public function indexAction(){
 
     // $model = new Main;
-    $total = \R::count('posts');
+    $lang = App::$app->getProperty('lang')['code'];
+    $total = \R::count('posts', 'lang_code = ?', [$lang]);
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $perpage = 2;
     $pagination = new Pagination($page, $perpage, $total);
     $start = $pagination->getStart();
-    $posts = \R::findAll('posts', "LIMIT $start, $perpage");
+    $posts = \R::findAll('posts', "lang_code = ? LIMIT $start, $perpage", [$lang]);
     View::setMeta('Blog : : Главная страница', 'Описание страницы', 'Ключевык слова');
     $this->set(compact('posts', 'pagination', 'total'));
   }

@@ -4,10 +4,12 @@ use fw\core\Router;
 
  $query = $_SERVER['REQUEST_URI'];
 $query = ltrim($_SERVER['REQUEST_URI'], '/');
-$query = rtrim($query, '/');
+ $query = rtrim($query, '/');
+// die;
 // echo '<br>';
 // echo $query = $_SERVER['QUERY_STRING'];
 // echo '<br>';
+// var_dump($_GET);
 
 define('DEBUG', 1);
 define('WWW', __DIR__);
@@ -34,7 +36,7 @@ Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'P
 Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
 
 // default routes
-Router::add('^admin$', ['controller' => 'User', 'action' => 'index', 'prefix' => 'admin']);
+Router::add('^admin$', ['controller' => 'Main', 'action' => 'index', 'prefix' => 'admin']);
 Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
 
 

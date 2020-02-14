@@ -15,10 +15,14 @@
   <body>
     <h1>Hello, world! im AAAADMIN default</h1>
     <div class="container">
-      <ul class="nav nav-pills">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/page/about">About</a></li>
-        <li><a href="/admin">ADMIN</a></li>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="/page/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin">ADMIN</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/signup">Signup</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
+
       </ul>
     </div>
     <?php echo $content; ?>
