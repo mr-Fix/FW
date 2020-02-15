@@ -2,14 +2,12 @@
 
 use fw\core\Router;
 
- $query = $_SERVER['REQUEST_URI'];
+ // $query = $_SERVER['REQUEST_URI'];
 $query = ltrim($_SERVER['REQUEST_URI'], '/');
  $query = rtrim($query, '/');
-// die;
-// echo '<br>';
+
 // echo $query = $_SERVER['QUERY_STRING'];
-// echo '<br>';
-// var_dump($_GET);
+
 
 define('DEBUG', 1);
 define('WWW', __DIR__);

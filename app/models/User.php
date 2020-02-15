@@ -56,7 +56,7 @@ class User extends Model
   }
 
   /**
-  * Метод авторизации пользователя
+  * Метод авторизации пользователя|администратора
   * @return bool
   */
   public function login($isAdmin = false){
@@ -64,7 +64,7 @@ class User extends Model
     $password = !empty( trim($_POST['password']) ) ? trim($_POST['password']) : null;
     if($login && $password){
       if($isAdmin){
-        $user = \R::findOne('user', "login = ? AND role = 'admin' LIMIT 1", [$login]);
+        $user = \R::findOne('user', "WHERE login = ? AND role = 'admin' LIMIT 1", [$login]);
       }else{
         $user = \R::findOne('user', 'login = ? LIMIT 1', [$login]);
       }
@@ -82,6 +82,10 @@ class User extends Model
     return false;
   }
 
+  /**
+  * Статический метод для проверки юзера на права администратора
+  * @return bool
+  */
   public static function isAdmin(){
     return (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin');
   }
