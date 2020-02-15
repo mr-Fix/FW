@@ -7,7 +7,7 @@ PHP >= 5.6
 
 MySQL
 
-MVC
+MVC + L
 
 RedBeanPHP
 
@@ -16,6 +16,8 @@ Composer
 Gzip
 
 Valitron
+
+AdminLTE
 
 ### Реализовано:
 
@@ -48,3 +50,9 @@ Valitron
 Собственный обработчик и логирование ошибок;
 
 Подключен валидатор форм Valitron;
+
+Мультиязычность
+
+AdminLTE
+
+Вход администратора
