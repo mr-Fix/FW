@@ -70,6 +70,7 @@ class Router
         $route['controller'] = self::upperCamelCase($route['controller']);
         self::$route = $route;
         // debug($route);
+        // die;
         return true;
       }
     }
@@ -131,7 +132,7 @@ class Router
   */
   protected static function removeQueryString($url){
     if($url){
-      $params = explode('&', $url, 2);
+      $params = explode('?', $url, 2);
       if( false === strpos($params[0], '=') ){
         return rtrim($params[0], '/');
       }else{

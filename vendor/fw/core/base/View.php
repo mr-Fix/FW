@@ -1,6 +1,7 @@
 <?php
 namespace fw\core\base;
 
+use fw\core\App;
 /**
  * Базовый view/ Подключает и отдает шаблоны и view. Также передает параметры внутрь view
  * Сожержит методы переноса скриптов js вниз шаблона из view
@@ -83,6 +84,8 @@ class View
   * @return void
   */
   public function render($vars){
+    Lang::load(App::$app->getProperty('lang'), $this->route);
+
     if( is_array($vars) ){
       extract($vars);
     }
@@ -157,5 +160,19 @@ class View
     self::$meta['title'] = $title;
     self::$meta['desc'] = $desc;
     self::$meta['keywords'] = $keywords;
+  }
+
+  /**
+  * Метод для поключения файла в шаблоне в папке view
+  * @param string
+  * @return int|bool
+  */
+  public function getPart($file){
+    $file = APP . "/views/{$file}.php";
+    if(is_file($file)){
+      require_once $file;
+    }else{
+      throw new \Exception("<p>Не найден файл <b>{$file}</b></p>", 404);
+    }
   }
 }

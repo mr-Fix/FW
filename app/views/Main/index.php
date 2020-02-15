@@ -11,14 +11,23 @@
 //]);
 ?>
 
-  <button class="btn btn-default" id="send">Кнопка</button>
+  <!-- <button class="btn btn-default" id="send">Кнопка</button> -->
   <?php if( !empty($posts) ): ?>
     <?php foreach($posts as $post): ?>
-      <div class="card">
+      <!-- <div class="card">
         <h5 class="card-header"><?php echo $post['title']; ?></h5>
         <div class="card-body">
           <p class="card-text"><?php echo $post['text']; ?></p>
           <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+        </div>
+      </div> -->
+
+      <div class="content-grid-info">
+        <img src="/public/blog/images/post1.jpg" alt=""/>
+        <div class="post-info">
+        <h4><a href="<?php echo $post->id; ?>"><?php echo $post->title; ?></a>  July 30, 2014 / 27 Comments</h4>
+        <p><?php echo $post->excerpt; ?></p>
+        <a href="<?php echo $post->id; ?>"><span></span><?php __('read_more'); ?></a>
         </div>
       </div>
       <?php endforeach; ?>
@@ -28,4 +37,6 @@
           <?php echo $pagination; ?>
         <?php endif; ?>
       </div>
+  <?php else: ?>
+    <h3>Posts not found...</h3>
   <?php endif; ?>

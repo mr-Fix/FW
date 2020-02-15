@@ -30,3 +30,12 @@ function redirect($http = false){
 function h($str){
   return htmlspecialchars($str, ENT_QUOTES);
 }
+
+/**
+* Обертка над \fw\core\base\Lang::get()
+* @param string $key ключ из массива с переводом
+* @return void
+*/
+function __($key){
+  echo \fw\core\base\Lang::get($key);
+}

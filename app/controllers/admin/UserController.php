@@ -2,6 +2,7 @@
 
 namespace app\controllers\admin;
 use fw\core\base\View;
+use app\models\User;
 /**
  *
  */
@@ -16,7 +17,18 @@ class UserController extends AppController
     // ]);
     $this->set( compact('test') );
   }
-  public function testAction(){
-
+  public function loginAction(){
+    if(!empty($_POST)){
+      $user = new User();
+      if( !$user->login(true) ){
+        $_SESSION['error'] = 'Логин/пароль введены неверно!';
+      }
+      if(User::isAdmin()){
+        redirect(ADMIN);
+      }else{
+        redirect();
+      }
+    }
+    $this->layout = 'login';
   }
 }

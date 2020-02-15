@@ -15,6 +15,8 @@ class Registry
   */
   public static $objects = [];
 
+
+
   protected function __construct()
   {
     require_once ROOT . '/config/config.php';
@@ -55,4 +57,43 @@ class Registry
     var_dump(self::$objects);
     echo '</pre>';
   }
+
+  /**
+  * Статическое свойство для хранения настроек
+  * @var array
+  */
+  protected static $properties = [];
+
+  /**
+  * Метод для записи в массив self::$properties
+  * @param string $name - ключ
+  * @param mixed $value - значение
+  * @return void
+  */
+  public function setProperty($name, $value){
+    self::$properties[$name] = $value;
+  }
+
+  /**
+  * Метод для записи в массив self::$properties
+  * @param string $name - ключ
+  * @return mixed|null
+  */
+  public function getProperty($name){
+    if( isset(self::$properties[$name]) ){
+      return self::$properties[$name];
+    }
+    return null;
+  }
+
+  /**
+  * Функция для распечатки self::$properties
+  * @return void
+  */
+  public function getProperties(){
+    // echo '<pre>';
+    debug(self::$properties);
+    // echo '</pre>';
+  }
+
 }
