@@ -17,6 +17,7 @@ define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 define('CORE', dirname(__DIR__) . '/vendor/fw/core');
 define('LAYOUT', 'blog');
+define('ADMIN', 'http://fw.loc/admin');
 define('LIBS', dirname(__DIR__) . '/vendor/fw/libs');
 define('CACHE', dirname(__DIR__) . '/tmp/cache');
 
